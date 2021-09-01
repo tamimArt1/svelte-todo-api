@@ -17,15 +17,13 @@ const client = new MongoClient(process.env.CONNECTION_URL, {
 async function run() {
   try {
     await client.connect();
-    app.listen(process.env.PORT || 9000, () => {
-      console.log(`DB cconnected. Server started at port ${process.env.PORT}`);
-    });
+    app.listen(process.env.PORT || 9000);
     const database = client.db("todo");
     const todos = database.collection("todos");
 
     // Endpoints
     app.get("/", async (req, res) => {
-      res.send("svelte todo api");
+      res.send("todo crud api");
     });
 
     app.get("/todos", async (req, res) => {
