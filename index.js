@@ -25,7 +25,7 @@ async function run() {
 
     // Endpoints
     app.get("/", async (req, res) => {
-      res.send("todo api");
+      res.send("svelte todo api");
     });
 
     app.get("/todos", async (req, res) => {
