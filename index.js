@@ -48,6 +48,12 @@ async function run() {
       );
       res.end();
     });
+
+    app.delete("/todo/:id", async (req, res) => {
+      const id = ObjectId(req.params.id);
+      await todos.deleteOne({ _id: id });
+      res.end();
+    });
   } finally {
   }
 }
